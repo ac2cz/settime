@@ -26,6 +26,7 @@ int main(int argc, char *argv[])  {
 	tval.tv_sec = secs;
 	if (settimeofday(&tval, 0) != 0) {
 		printf ("error %d setting time to %ld - %s\n", errno, tval.tv_sec, strerror(errno));
+		exit(errno);
 	} else {
 		printf("Setting time to %ld secs\n",secs);
 	}
